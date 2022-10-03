@@ -1,0 +1,11 @@
+insert into customers values(1, 'John Doe', now(), 'Almaty');
+insert into products values(256, 'Soap', 'Soapy', 600);
+insert into orders values(10, 1, 600, true);
+insert into order_items values(10, 256, 1);
+update customers set full_name = 'Bob Black' where id = 1;
+update products set description = 'Very soapy' where id = '256';
+update orders set is_paid = false where customer_id = 1;
+delete from order_items where order_code = 10;
+delete from orders where code = 10;
+delete from products where id = '256';
+delete from customers where id = 1;
