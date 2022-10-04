@@ -17,10 +17,11 @@ create table instructor(
     possibility_of_having_remote_lessons boolean not null
 );
 create table lesson_participants(
-    lesson_title varchar primary key,
+    lesson_title varchar not null,
     teaching_instructor int not null,
     studying_students int not null,
     room_number int not null,
+    constraint c primary key(lesson_title, teaching_instructor, studying_students),
     foreign key(teaching_instructor) references instructor(id),
     foreign key(studying_students) references student(id)
 );
